@@ -7,16 +7,31 @@
 ## Stage 1 — Week 1 (Buy Now)
 Get these first. They give the biggest immediate impact.
 
+### Gentle Cleanser — PM daily (and AM if skin feels oily)
+For redness-prone skin, use this as your everyday wash. Fragrance-free, no harsh surfactants.
+| Tier | Product | Price | Why |
+|------|---------|-------|-----|
+| Budget | Simple Kind to Skin Moisturising Facial Wash | ~£4 | Fragrance-free, widely available, very gentle |
+| Mid | CeraVe Hydrating Cleanser | ~£10 | Ceramides maintain skin barrier — ideal for sensitive/dry skin |
+| Premium | La Roche-Posay Toleriane Hydrating Gentle Cleanser | ~£15 | Specifically formulated for redness-prone and sensitive skin |
+
+**Use this every PM.** The BHA cleanser (Stage 2) replaces this 2–3x per week — not in addition to it.
+
+---
+
 ### SPF 50 — Daily, last step every morning
 | Tier | Product | Price | Why |
 |------|---------|-------|-----|
 | Budget | Altruist Face Fluid SPF 50 | ~£2 | Lightweight, non-greasy, great value |
-| Mid | La Roche-Posay Anthelios Uvmune 400 Fluid SPF 50+ | ~£20 | Specifically formulated for sensitive/redness-prone skin |
+| Mid | **CeraVe AM Facial Moisturising Lotion SPF 50** | ~£15 | ⭐ Best choice — moisturiser + SPF 50 in one, fragrance-free, sensitive skin |
 | Premium | Ultrasun Face SPF 50+ Anti-Pigmentation | ~£30 | Also targets uneven tone |
+
+> ⭐ **Recommended:** CeraVe AM SPF 50 replaces both the separate SPF and moisturiser in your AM routine — one less step, same result. If you use this, skip the separate moisturiser in the morning.
 
 **Buy this first.** Nothing else matters until SPF is in the routine.
 
 ### Niacinamide Moisturiser — AM + PM after cleansing
+> ℹ️ If using CeraVe AM SPF 50 in the morning, you only need the niacinamide serum (not a separate moisturiser) for AM. Use a plain moisturiser PM only.
 | Tier | Product | Price | Why |
 |------|---------|-------|-----|
 | Budget | The Ordinary Niacinamide 10% + Zinc 1% (serum) + CeraVe Moisturising Cream | ~£12 total | Use serum first, then moisturiser |
@@ -47,8 +62,28 @@ Used to smooth skin texture, reduce congestion on nose and beard area.
 
 ---
 
-## Stage 3 — Month 2 (Add This)
+## Stage 3 — Month 2 (Add These)
 Only add retinol once redness is under control and skin barrier is stable.
+
+### Eye Cream — AM + PM, applied before moisturiser
+The eye area needs its own product — thinner skin, more sensitive, shows age first.
+| Tier | Product | Price | Why |
+|------|---------|-------|-----|
+| Budget | The Ordinary Caffeine Solution 5% + EGCG | ~£7 | Reduces puffiness and dark circles — pat gently, don't rub |
+| Mid | CeraVe Eye Repair Cream | ~£15 | Ceramides + niacinamide — gentle, fragrance-free |
+| Premium | Estée Lauder Advanced Night Repair Eye | ~£55 | Peptides + antioxidants — the benchmark eye cream |
+
+⚠️ **Always pat — never rub.** Use your ring finger (lightest pressure).
+
+### Peptide Serum — PM on non-Retinol nights
+Peptides signal skin to produce collagen. They complement retinol rather than duplicate it — use on alternating nights.
+| Tier | Product | Price | Why |
+|------|---------|-------|-----|
+| Budget | The Ordinary Buffet (Multi-Technology Peptide Serum) | ~£15 | Good entry-level peptide blend |
+| Mid | The INKEY List Peptide Moisturiser | ~£15 | Peptides + moisturiser in one — simplifies routine |
+| Premium | SkinCeuticals H.A. Intensifier or Medik8 Peptide Serum | ~£90 | Clinical-grade peptide density |
+
+---
 
 ### Retinol — PM only, 2x per week to start
 | Tier | Product | Price | Why |
@@ -65,13 +100,14 @@ Only add retinol once redness is under control and skin barrier is stable.
 1. Lukewarm water rinse
 2. Vitamin C serum — wait 60 seconds
 3. Niacinamide serum (if using separately)
-4. Moisturiser
-5. SPF 50 ← **never skip**
+4. Eye cream — pat gently
+5. Moisturiser
+6. SPF 50 ← **never skip**
 
 **PM:**
-1. Oil cleanser or micellar water
-2. Gentle cleanser (or BHA cleanser 2–3x/week)
-3. Retinol (on non-BHA nights, 2x/week to start)
+1. Gentle cleanser (or BHA cleanser 2–3x/week in its place)
+2. Peptide serum (on non-Retinol nights) or Retinol (2x/week)
+3. Eye cream — pat gently
 4. Heavy moisturiser
 
 ---
@@ -79,10 +115,20 @@ Only add retinol once redness is under control and skin barrier is stable.
 ## Total Cost to Get Started (Budget Tier)
 | Product | Cost |
 |---------|------|
+| Simple Kind to Skin Cleanser | £4 |
 | Altruist SPF 50 | £2 |
 | The Ordinary Niacinamide 10% | £5 |
-| CeraVe Moisturising Cream | £7 |
+| CeraVe Moisturising Cream (PM only) | £7 |
 | The Ordinary Vitamin C | £9 |
 | The Ordinary BHA | £5 |
+| The Ordinary Caffeine Eye Solution | £7 |
+| The Ordinary Buffet Peptide Serum | £15 |
 | The Ordinary Retinol 0.2% | £8 |
-| **Total** | **~£36** |
+| **Total** | **~£62** |
+
+### Simpler AM option (saves a step)
+Swap Altruist SPF 50 + CeraVe Moisturising Cream for:
+| Product | Cost |
+|---------|------|
+| CeraVe AM Facial Moisturising Lotion SPF 50 | £15 |
+Replaces two products, saves money, one less step.

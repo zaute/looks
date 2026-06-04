@@ -219,16 +219,31 @@
     .swatch-hex   { font-size: 12px; color: var(--muted); font-family: monospace; margin-top: 2px; }
     .swatch-use   { font-size: 12px; color: var(--muted); margin-top: 4px; line-height: 1.5; }
 
-    .avoid-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
-    .avoid-tag {
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 12px;
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      color: var(--muted);
-      text-decoration: line-through;
+    .avoid-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; margin-top: 12px; }
+    .avoid-swatch {
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid #7a2020;
+      opacity: 0.85;
+      position: relative;
     }
+    .avoid-swatch-color {
+      height: 80px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .avoid-swatch-color::after {
+      content: '✕';
+      font-size: 32px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.75);
+      text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+    }
+    .avoid-swatch-info { padding: 10px 12px; background: var(--surface2); }
+    .avoid-swatch-name { font-size: 13px; font-weight: 600; color: #e07070; }
+    .avoid-swatch-reason { font-size: 11px; color: var(--muted); margin-top: 3px; line-height: 1.4; }
 
     /* ── TABLES ── */
     table { width: 100%; border-collapse: collapse; font-size: 13px; }
@@ -457,18 +472,19 @@
           <div class="action-item"><div class="dot" style="background:#f4a142"></div><span class="action-text">Lukewarm water rinse</span></div>
           <div class="action-item"><div class="dot" style="background:#f4a142"></div><span class="action-text">Vitamin C serum — wait 60 sec</span></div>
           <div class="action-item"><div class="dot" style="background:#f4a142"></div><span class="action-text">Niacinamide serum</span></div>
+          <div class="action-item"><div class="dot" style="background:#f4a142"></div><span class="action-text">Eye cream — pat gently (ring finger)</span></div>
           <div class="action-item"><div class="dot" style="background:#f4a142"></div><span class="action-text">Moisturiser</span></div>
           <div class="action-item"><div class="dot" style="background:#f4a142"></div><strong class="action-text">SPF 50 ← NEVER SKIP</strong></div>
         </div>
         <div>
           <div style="font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;">🌙 PM</div>
-          <div class="action-item"><div class="dot" style="background:var(--accent)"></div><span class="action-text">Oil cleanser / micellar water</span></div>
-          <div class="action-item"><div class="dot" style="background:var(--accent)"></div><span class="action-text">Gentle cleanser (or BHA 2–3× per week)</span></div>
-          <div class="action-item"><div class="dot" style="background:var(--accent)"></div><span class="action-text">Retinol (non-BHA nights, 2× per week — add Month 2)</span></div>
+          <div class="action-item"><div class="dot" style="background:var(--accent)"></div><span class="action-text">Gentle cleanser (or BHA 2–3× per week in its place)</span></div>
+          <div class="action-item"><div class="dot" style="background:var(--accent)"></div><span class="action-text">Peptide serum (non-Retinol nights) or Retinol (2× per week — add Month 2)</span></div>
+          <div class="action-item"><div class="dot" style="background:var(--accent)"></div><span class="action-text">Eye cream — pat gently (ring finger)</span></div>
           <div class="action-item"><div class="dot" style="background:var(--accent)"></div><span class="action-text">Heavy moisturiser</span></div>
         </div>
       </div>
-      <div class="note warning" style="margin-top:16px;">⚠️ Never BHA and Retinol on the same night. Alternate them. · Vitamin C AM only · Retinol PM only</div>
+      <div class="note warning" style="margin-top:16px;">⚠️ Never BHA and Retinol on the same night. Alternate them. · Vitamin C AM only · Retinol PM only · Eye cream always pat, never rub</div>
     </div>
 
     <div class="card">
@@ -476,9 +492,15 @@
       <table>
         <tr><th>Product</th><th>Budget</th><th>Mid</th><th>Premium</th></tr>
         <tr>
+          <td><strong>Gentle Cleanser</strong><br><span style="color:var(--muted);font-size:12px">PM daily — fragrance-free</span></td>
+          <td class="tier-budget">Simple Kind to Skin Facial Wash ~£4</td>
+          <td class="tier-mid">CeraVe Hydrating Cleanser ~£10</td>
+          <td class="tier-premium">La Roche-Posay Toleriane ~£15</td>
+        </tr>
+        <tr>
           <td><strong>SPF 50</strong><br><span style="color:var(--muted);font-size:12px">Last step, every morning</span></td>
           <td class="tier-budget">Altruist SPF 50 ~£2</td>
-          <td class="tier-mid">La Roche-Posay Anthelios ~£20</td>
+          <td class="tier-mid">⭐ CeraVe AM Moisturiser SPF 50 ~£15<br><span style="color:var(--muted);font-size:11px">Replaces SPF + moisturiser in one — recommended</span></td>
           <td class="tier-premium">Ultrasun Face SPF 50+ ~£30</td>
         </tr>
         <tr>
@@ -488,12 +510,13 @@
           <td class="tier-premium">SkinCeuticals Metacell B3 ~£90</td>
         </tr>
         <tr>
-          <td><strong>Moisturiser</strong></td>
+          <td><strong>Moisturiser</strong><br><span style="color:var(--muted);font-size:12px">PM only (if using CeraVe AM SPF in morning)</span></td>
           <td class="tier-budget">CeraVe Moisturising Cream ~£7</td>
           <td class="tier-mid">Vichy Minéral 89 ~£20</td>
           <td class="tier-premium">SkinCeuticals HA Intensifier ~£90</td>
         </tr>
       </table>
+      <div class="note" style="margin-top:14px;">⭐ <strong>Tip:</strong> CeraVe AM Facial Moisturising Lotion SPF 50 (~£15) replaces both SPF and morning moisturiser in one step — simpler routine, same result.</div>
     </div>
 
     <div class="card">
@@ -521,13 +544,25 @@
       <table>
         <tr><th>Product</th><th>Budget</th><th>Mid</th><th>Premium</th></tr>
         <tr>
+          <td><strong>Eye Cream</strong><br><span style="color:var(--muted);font-size:12px">AM + PM · pat with ring finger</span></td>
+          <td class="tier-budget">The Ordinary Caffeine Solution 5% ~£7</td>
+          <td class="tier-mid">CeraVe Eye Repair Cream ~£15</td>
+          <td class="tier-premium">Estée Lauder Advanced Night Repair Eye ~£55</td>
+        </tr>
+        <tr>
+          <td><strong>Peptide Serum</strong><br><span style="color:var(--muted);font-size:12px">PM · on non-Retinol nights</span></td>
+          <td class="tier-budget">The Ordinary Buffet ~£15</td>
+          <td class="tier-mid">The INKEY List Peptide Moisturiser ~£15</td>
+          <td class="tier-premium">Medik8 Liquid Peptides ~£90</td>
+        </tr>
+        <tr>
           <td><strong>Retinol</strong><br><span style="color:var(--muted);font-size:12px">PM only · 2× per week to start</span></td>
           <td class="tier-budget">The Ordinary Retinol 0.2% ~£8<br><span style="color:var(--muted);font-size:11px">Start here — step up to 0.5% after 8 weeks</span></td>
           <td class="tier-mid">RoC Retinol Correxion ~£25</td>
           <td class="tier-premium">SkinCeuticals Retinol 0.3 → 1.0 ~£75</td>
         </tr>
       </table>
-      <div class="note" style="margin-top:14px;">Budget total (all stages): ~£36 for the complete routine</div>
+      <div class="note" style="margin-top:14px;">Budget total (all stages): ~£62 for the complete routine</div>
     </div>
   </section>
 
@@ -535,6 +570,16 @@
   <section id="fitness">
     <h2>Fitness Plan</h2>
     <p class="section-subtitle">3 days/week · Posture first · Every exercise connected to how clothes fit</p>
+
+    <div class="card" style="border-color:#4caf82;">
+      <h3>🔥 Warm-Up — 8 min (do this BEFORE every session)</h3>
+      <p style="margin-bottom:12px;font-size:13px;color:var(--muted);">At 55, warm-up is non-negotiable. Joints and tendons need time before load.</p>
+      <div class="exercise-row"><div><div class="exercise-name">Light Walking / Bike</div><div class="exercise-note">Increases blood flow to joints</div></div><div class="exercise-sets">3 min</div></div>
+      <div class="exercise-row"><div><div class="exercise-name">Arm Circles</div><div class="exercise-note">Forwards + backwards — warms up the shoulder joint</div></div><div class="exercise-sets">10 each</div></div>
+      <div class="exercise-row"><div><div class="exercise-name">Scapular Retractions</div><div class="exercise-note">Activates upper back before lifting</div></div><div class="exercise-sets">2×10</div></div>
+      <div class="exercise-row"><div><div class="exercise-name">Hip Circles</div><div class="exercise-note">Frees up the hip joint</div></div><div class="exercise-sets">10 each</div></div>
+      <div class="exercise-row"><div><div class="exercise-name">Bodyweight Squat</div><div class="exercise-note">Activates knees and ankles</div></div><div class="exercise-sets">2×10</div></div>
+    </div>
 
     <div class="day-tabs">
       <div class="day-tab active" data-day="day1">Day 1 — Push + Posture</div>
@@ -577,6 +622,30 @@
       </div>
     </div>
 
+    <div class="card" style="margin-top:20px;border-color:#f4a142;">
+      <h3>📈 Progressive Overload</h3>
+      <p style="margin-bottom:12px;font-size:13px;color:var(--muted);">Without progression, results stop. Follow the 2-for-2 rule.</p>
+      <div class="posture-cue">"If you complete 2 extra reps on the last set for 2 sessions in a row — increase the weight by 2–2.5 kg"</div>
+      <table style="margin-top:14px;">
+        <tr><th>Phase</th><th>Week</th><th>Focus</th></tr>
+        <tr><td><strong>Adaptation</strong></td><td>1–3</td><td>Learn the technique. Light weight. Don't push.</td></tr>
+        <tr><td><strong>Building</strong></td><td>4–8</td><td>Increase weight when the 2-for-2 rule triggers</td></tr>
+        <tr><td><strong>Consolidation</strong></td><td>9–12</td><td>Hold the weights, improve control and tempo</td></tr>
+        <tr><td><strong>Deload ⚠️</strong></td><td>Every 4–5th week</td><td>1 week at 50% weight — the body builds during rest</td></tr>
+      </table>
+    </div>
+
+    <div class="card" style="margin-top:20px;border-color:var(--accent);">
+      <h3>🧘 Cool-Down + Stretching — 8 min (after every session)</h3>
+      <p style="margin-bottom:12px;font-size:13px;color:var(--muted);">Especially important for chest and hip flexors which tighten quickly with strength training.</p>
+      <div class="exercise-row"><div><div class="exercise-name">Doorway Chest Stretch</div><div class="exercise-note">Chest + front shoulder</div></div><div class="exercise-sets">2×30s</div></div>
+      <div class="exercise-row"><div><div class="exercise-name">Cross-body Shoulder Stretch</div><div class="exercise-note">Rear shoulder</div></div><div class="exercise-sets">2×30s each</div></div>
+      <div class="exercise-row"><div><div class="exercise-name">Hip Flexor Stretch (kneeling)</div><div class="exercise-note">Hip flexors — tighten from desk work</div></div><div class="exercise-sets">2×30s each</div></div>
+      <div class="exercise-row"><div><div class="exercise-name">Seated Hamstring Stretch</div><div class="exercise-note">Hamstrings</div></div><div class="exercise-sets">2×30s each</div></div>
+      <div class="exercise-row"><div><div class="exercise-name">Thoracic Extension — foam roller</div><div class="exercise-note">Upper back — counteracts rounding. Do DAILY.</div></div><div class="exercise-sets">60 sec</div></div>
+      <div class="exercise-row"><div><div class="exercise-name">Neck Side Stretch</div><div class="exercise-note">Neck and upper trapezius</div></div><div class="exercise-sets">2×20s each</div></div>
+    </div>
+
     <div class="card" style="margin-top:20px;">
       <h3>Lifestyle Foundation</h3>
       <table>
@@ -586,6 +655,29 @@
         <tr><td><strong>Water</strong></td><td>2–2.5L / day</td><td>Dehydration reduces performance, slows recovery, makes skin look worse.</td></tr>
         <tr><td><strong>Processed food</strong></td><td>Reduce significantly</td><td>Drives belly fat and inflammation — visible impact faster than most exercise changes.</td></tr>
       </table>
+    </div>
+
+    <div class="card" style="border-color:#c0392b;">
+      <h3>🚫 Foods & Snacks to Completely Avoid</h3>
+      <p style="margin-bottom:14px;font-size:13px;color:var(--muted);">These directly work against your goals — belly fat, skin redness, inflammation, poor sleep, blocked muscle recovery.</p>
+      <table>
+        <tr><th>Category</th><th>Examples</th><th>Why it's bad for you</th></tr>
+        <tr><td><strong>Sugary drinks</strong></td><td>Coke, energy drinks, fruit juice, sweetened coffee</td><td>Spikes insulin → inflammation → worse skin redness. Pure fat gain.</td></tr>
+        <tr><td><strong>Alcohol (esp. beer)</strong></td><td>Beer, alcopops, cocktails</td><td>Belly fat specifically. Destroys sleep. Dehydrates skin. Blocks protein synthesis 24–48 hrs.</td></tr>
+        <tr><td><strong>Crisps / chips</strong></td><td>Pringles, Doritos, all bagged crisps</td><td>Trans fats + salt. Causes water retention → puffy face.</td></tr>
+        <tr><td><strong>Pastries & baked goods</strong></td><td>Croissants, muffins, donuts, cakes</td><td>Refined flour + sugar + seed oils. Rapid inflammation and belly fat.</td></tr>
+        <tr><td><strong>Fast food</strong></td><td>McDonald's, kebab, pizza chain, fried chicken</td><td>Ultra-processed, trans fats, massive sodium. One meal can undo days of effort.</td></tr>
+        <tr><td><strong>Sweets & chocolate bars</strong></td><td>Haribo, Snickers, KitKat, pick'n'mix</td><td>Pure sugar. Worsens skin redness, drives belly fat, crashes energy.</td></tr>
+        <tr><td><strong>Processed meats</strong></td><td>Salami, hot dogs, cheap sausages</td><td>High sodium + preservatives → inflammation and water retention.</td></tr>
+        <tr><td><strong>Breakfast cereals</strong></td><td>Most boxed cereals, granola bars</td><td>Hidden sugar — marketed as healthy, behaves like sweets.</td></tr>
+      </table>
+      <div class="note" style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div><strong>Instead of Coke/juice →</strong> Sparkling water, black coffee, green tea</div>
+        <div><strong>Instead of crisps →</strong> Handful of almonds or walnuts, boiled eggs</div>
+        <div><strong>Instead of chocolate bar →</strong> Greek yoghurt + berries, or dark chocolate 85%+</div>
+        <div><strong>Instead of beer →</strong> Sparkling water with lime — or nothing</div>
+      </div>
+      <div class="note warning" style="margin-top:12px;">⚠️ <strong>Biggest single impact:</strong> Cut sugary drinks and beer first. These two changes alone visibly affect belly fat and skin within 3–4 weeks.</div>
     </div>
   </section>
 
@@ -611,13 +703,13 @@
       <h3>Colours to Avoid</h3>
       <p style="margin-bottom:12px;">These clash with your cool undertone and drain your complexion.</p>
       <div class="avoid-grid">
-        <span class="avoid-tag">Brown / Tan / Camel</span>
-        <span class="avoid-tag">Mustard</span>
-        <span class="avoid-tag">Orange</span>
-        <span class="avoid-tag">Olive / Khaki</span>
-        <span class="avoid-tag">Gold jewellery</span>
-        <span class="avoid-tag">Cream / Off-white</span>
-        <span class="avoid-tag">Warm greens</span>
+        <div class="avoid-swatch"><div class="avoid-swatch-color" style="background:#8B5E3C"></div><div class="avoid-swatch-info"><div class="avoid-swatch-name">Brown / Tan</div><div class="avoid-swatch-reason">Warm tone clashes — makes skin look grey</div></div></div>
+        <div class="avoid-swatch"><div class="avoid-swatch-color" style="background:#C19A00"></div><div class="avoid-swatch-info"><div class="avoid-swatch-name">Mustard</div><div class="avoid-swatch-reason">Too warm — washes out fair skin completely</div></div></div>
+        <div class="avoid-swatch"><div class="avoid-swatch-color" style="background:#D2691E"></div><div class="avoid-swatch-info"><div class="avoid-swatch-name">Orange</div><div class="avoid-swatch-reason">Too warm — fights your cool undertone</div></div></div>
+        <div class="avoid-swatch"><div class="avoid-swatch-color" style="background:#6B7C45"></div><div class="avoid-swatch-info"><div class="avoid-swatch-name">Olive / Khaki</div><div class="avoid-swatch-reason">Yellow base clashes with your undertone</div></div></div>
+        <div class="avoid-swatch"><div class="avoid-swatch-color" style="background:#C9A84C"></div><div class="avoid-swatch-info"><div class="avoid-swatch-name">Camel</div><div class="avoid-swatch-reason">Warm — drains cool fair complexion</div></div></div>
+        <div class="avoid-swatch"><div class="avoid-swatch-color" style="background:#F5F0E0"></div><div class="avoid-swatch-info"><div class="avoid-swatch-name">Cream / Off-white</div><div class="avoid-swatch-reason">Adds yellow near face — use pure white instead</div></div></div>
+        <div class="avoid-swatch"><div class="avoid-swatch-color" style="background:#CFB53B"></div><div class="avoid-swatch-info"><div class="avoid-swatch-name">Gold</div><div class="avoid-swatch-reason">Jewellery + hardware — always silver instead</div></div></div>
       </div>
       <div class="note warning" style="margin-top:14px;">⚠️ The brown/yellow striped shirt flagged in your analysis falls into this category — retire it immediately.</div>
     </div>
@@ -781,39 +873,43 @@ Product: Light matte paste or nothing — avoid shine products</div>
   <!-- TRONDHEIM SHOPPING -->
   <section id="shopping">
     <h2>Trondheim Shopping</h2>
-    <p class="section-subtitle">Lokale butikker · Riktige produkter · I riktig rekkefølge</p>
+    <p class="section-subtitle">Local stores · Right products · Right order</p>
 
     <div class="card">
-      <h3>🧴 Hudpleie — Kicks (City Syd · Torg · Solsiden)</h3>
-      <p style="margin-bottom:14px;">Beste valg for hudpleie i Trondheim. Finner nesten alt her, inkludert hele The Ordinary-sortimentet.</p>
+      <h3>🧴 Skincare — Kicks (City Syd · Torg · Solsiden)</h3>
+      <p style="margin-bottom:14px;">Best option for skincare in Trondheim. Stocks almost everything including the full The Ordinary range.</p>
       <table>
-        <tr><th>Produkt</th><th>Hva du kjøper</th><th>Pris ca.</th></tr>
+        <tr><th>Product</th><th>What to buy</th><th>Price approx.</th></tr>
         <tr><td><strong>SPF 50</strong></td><td>La Roche-Posay Anthelios Uvmune 400</td><td>~kr 220</td></tr>
         <tr><td><strong>Niacinamide</strong></td><td>The Ordinary Niacinamide 10% + Zinc</td><td>~kr 80</td></tr>
         <tr><td><strong>Vitamin C</strong></td><td>The Ordinary Ascorbyl Glucoside 12%</td><td>~kr 100</td></tr>
         <tr><td><strong>BHA</strong></td><td>Paula's Choice 2% BHA Liquid</td><td>~kr 380</td></tr>
-        <tr><td><strong>Fuktighetskrem</strong></td><td>CeraVe Moisturising Cream</td><td>~kr 120</td></tr>
-        <tr><td><strong>Retinol (måned 2)</strong></td><td>The Ordinary Retinol 0.2% in Squalane</td><td>~kr 90</td></tr>
+        <tr><td><strong>Moisturiser</strong></td><td>CeraVe Moisturising Cream</td><td>~kr 120</td></tr>
+        <tr><td><strong>Eye cream (month 2)</strong></td><td>The Ordinary Caffeine Solution 5%</td><td>~kr 80</td></tr>
+        <tr><td><strong>Peptide serum (month 2)</strong></td><td>The Ordinary Buffet</td><td>~kr 170</td></tr>
+        <tr><td><strong>Retinol (month 2)</strong></td><td>The Ordinary Retinol 0.2% in Squalane</td><td>~kr 90</td></tr>
       </table>
     </div>
 
     <div class="card">
-      <h3>💊 Apotek 1 / Vitusapotek — sentrum + kjøpesentre</h3>
-      <p style="margin-bottom:14px;">Bra alternativ for La Roche-Posay og CeraVe. Apotekpersonalet kan gi råd om sensitiv/rød hud.</p>
+      <h3>💊 Apotek 1 / Vitusapotek — city centre + shopping centres</h3>
+      <p style="margin-bottom:14px;">Good alternative for La Roche-Posay and CeraVe. Staff can advise on sensitive/redness-prone skin.</p>
       <table>
-        <tr><th>Produkt</th><th>Merke</th></tr>
-        <tr><td>SPF 50 sensitiv hud</td><td>La Roche-Posay Anthelios</td></tr>
-        <tr><td>Fuktighetskrem</td><td>CeraVe Moisturising Cream</td></tr>
-        <tr><td>Mild rensemiddel</td><td>La Roche-Posay Toleriane</td></tr>
+        <tr><th>Product</th><th>Brand</th></tr>
+        <tr><td>SPF 50 sensitive skin</td><td>La Roche-Posay Anthelios</td></tr>
+        <tr><td>Moisturiser</td><td>CeraVe Moisturising Cream</td></tr>
+        <tr><td>Gentle cleanser</td><td>La Roche-Posay Toleriane</td></tr>
       </table>
     </div>
 
     <div class="card">
-      <h3>💸 Normal — billigst på The Ordinary (City Syd · Torg)</h3>
+      <h3>💸 Normal — cheapest for The Ordinary (City Syd · Torg)</h3>
       <table>
-        <tr><th>Produkt</th><th>Pris ca.</th></tr>
+        <tr><th>Product</th><th>Price approx.</th></tr>
         <tr><td>The Ordinary Niacinamide 10%</td><td>~kr 80</td></tr>
         <tr><td>The Ordinary Vitamin C</td><td>~kr 100</td></tr>
+        <tr><td>The Ordinary Caffeine Eye Solution</td><td>~kr 80</td></tr>
+        <tr><td>The Ordinary Buffet (peptides)</td><td>~kr 170</td></tr>
         <tr><td>The Ordinary Retinol 0.2%</td><td>~kr 90</td></tr>
       </table>
     </div>
@@ -821,27 +917,27 @@ Product: Light matte paste or nothing — avoid shine products</div>
     <hr class="divider" />
 
     <div class="card">
-      <h3>👕 Klær — True Winter-garderoben</h3>
+      <h3>👕 Clothing — True Winter wardrobe</h3>
       <table>
-        <tr><th>Butikk</th><th>Lokasjon</th><th>Hva du kjøper der</th><th>Pris ca.</th></tr>
-        <tr><td><strong>Dressmann</strong></td><td>City Syd · Torg · Solsiden</td><td>Navy polo, svarte chinos — start her for basics</td><td>kr 299–599</td></tr>
-        <tr><td><strong>Jack & Jones</strong></td><td>City Syd · Torg</td><td>Navy/burgunder polo, mørk denim slim/straight</td><td>kr 299–799</td></tr>
-        <tr><td><strong>Selected Homme</strong></td><td>Torg · Solsiden</td><td>Navy polo i bedre kvalitet, ustrukturert navy blazer</td><td>kr 599–1599</td></tr>
-        <tr><td><strong>Filippa K</strong></td><td>Solsiden</td><td>Merino strikk i kull/navy/burgunder — tidløs</td><td>kr 1299–1999</td></tr>
-        <tr><td><strong>H&amp;M</strong></td><td>Torg · City Syd</td><td>Hvit t-skjorte, slim fit — bra pris for basics</td><td>kr 149–299</td></tr>
-        <tr><td><strong>Levi's</strong></td><td>City Syd</td><td>511 eller 501 i "onewash" (nesten svart) — unngå lyse</td><td>kr 799–999</td></tr>
-        <tr><td><strong>Bianco / Shoe Story</strong></td><td>City Syd · Torg</td><td>Enkle svarte sko eller hvite sneakers</td><td>kr 499–999</td></tr>
+        <tr><th>Store</th><th>Location</th><th>What to buy there</th><th>Price approx.</th></tr>
+        <tr><td><strong>Dressmann</strong></td><td>City Syd · Torg · Solsiden</td><td>Navy polo, black chinos — start here for basics</td><td>kr 299–599</td></tr>
+        <tr><td><strong>Jack & Jones</strong></td><td>City Syd · Torg</td><td>Navy/burgundy polo, dark slim/straight denim</td><td>kr 299–799</td></tr>
+        <tr><td><strong>Selected Homme</strong></td><td>Torg · Solsiden</td><td>Navy polo in better quality, unstructured navy blazer</td><td>kr 599–1599</td></tr>
+        <tr><td><strong>Filippa K</strong></td><td>Solsiden</td><td>Merino knitwear in charcoal/navy/burgundy — timeless</td><td>kr 1299–1999</td></tr>
+        <tr><td><strong>H&amp;M</strong></td><td>Torg · City Syd</td><td>White t-shirt, slim fit — good price for basics</td><td>kr 149–299</td></tr>
+        <tr><td><strong>Levi's</strong></td><td>City Syd</td><td>511 or 501 in "onewash" (near black) — avoid light washes</td><td>kr 799–999</td></tr>
+        <tr><td><strong>Bianco / Shoe Story</strong></td><td>City Syd · Torg</td><td>Simple black shoes or clean white sneakers</td><td>kr 499–999</td></tr>
       </table>
     </div>
 
     <div class="card">
-      <h3>✅ Handlerekkefølge</h3>
-      <div class="action-item week1"><div class="dot" style="background:#4caf82"></div><div><div class="action-text"><strong>Uke 1 — Kicks eller apotek:</strong> SPF 50 · Niacinamide · CeraVe fuktighetskrem</div></div></div>
-      <div class="action-item week1"><div class="dot" style="background:#4caf82"></div><div><div class="action-text"><strong>Uke 1 — Dressmann eller Jack & Jones:</strong> 1–2 navy poloer · Én koksgrå t-skjorte (god passform)</div></div></div>
-      <div class="action-item month1"><div class="dot" style="background:#f4a142"></div><div><div class="action-text"><strong>Uke 2–3 — Kicks:</strong> Vitamin C serum · BHA eksfoliant</div></div></div>
-      <div class="action-item month1"><div class="dot" style="background:#f4a142"></div><div><div class="action-text"><strong>Måned 1 — Selected Homme / Filippa K:</strong> Merino strikk · Navy blazer</div></div></div>
-      <div class="action-item ongoing"><div class="dot" style="background:var(--accent)"></div><div><div class="action-text"><strong>Måned 2 — Kicks:</strong> Retinol 0.2% (når huden er stabil)</div></div></div>
-      <div class="note" style="margin-top:14px;">Tips: City Syd dekker nesten alt på én tur — Kicks, Normal, Dressmann, Jack & Jones og Levi's er alle der.</div>
+      <h3>✅ Shopping Order</h3>
+      <div class="action-item week1"><div class="dot" style="background:#4caf82"></div><div><div class="action-text"><strong>Week 1 — Kicks or pharmacy:</strong> SPF 50 · Niacinamide · CeraVe moisturiser</div></div></div>
+      <div class="action-item week1"><div class="dot" style="background:#4caf82"></div><div><div class="action-text"><strong>Week 1 — Dressmann or Jack & Jones:</strong> 1–2 navy polos · One charcoal t-shirt (good fit)</div></div></div>
+      <div class="action-item month1"><div class="dot" style="background:#f4a142"></div><div><div class="action-text"><strong>Week 2–3 — Kicks:</strong> Vitamin C serum · BHA exfoliant</div></div></div>
+      <div class="action-item month1"><div class="dot" style="background:#f4a142"></div><div><div class="action-text"><strong>Month 1 — Selected Homme / Filippa K:</strong> Merino knitwear · Navy blazer</div></div></div>
+      <div class="action-item ongoing"><div class="dot" style="background:var(--accent)"></div><div><div class="action-text"><strong>Month 2 — Kicks:</strong> Retinol 0.2% · Eye cream · Peptide serum (once skin is stable)</div></div></div>
+      <div class="note" style="margin-top:14px;">Tip: City Syd covers almost everything in one trip — Kicks, Normal, Dressmann, Jack & Jones and Levi's are all there.</div>
     </div>
   </section>
 
