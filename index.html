@@ -393,6 +393,31 @@
     .divider { border: none; border-top: 1px solid var(--border); margin: 24px 0; }
     .note { font-size: 12px; color: var(--muted); padding: 10px 14px; background: var(--surface2); border-left: 3px solid var(--navy); border-radius: 4px; line-height: 1.6; margin-top: 12px; }
     .warning { border-left-color: #f4a142; color: #d4a060; }
+    /* ── WARDROBE ── */
+    .wardrobe-tabs { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; }
+    .wardrobe-tab {
+      padding: 8px 18px; border-radius: 20px; font-size: 13px; font-weight: 600;
+      cursor: pointer; border: 1px solid var(--border); background: var(--surface);
+      color: var(--muted); transition: all 0.15s;
+    }
+    .wardrobe-tab.active, .wardrobe-tab:hover { background: var(--navy); border-color: var(--navy-light); color: var(--white); }
+    .wardrobe-cat { display: none; }
+    .wardrobe-cat.active { display: block; }
+    .outfit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    @media (max-width: 700px) { .outfit-grid { grid-template-columns: 1fr; } }
+    .outfit-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+    .outfit-img { width: 100%; height: 280px; object-fit: cover; object-position: top; background: var(--surface2); display: block; }
+    .outfit-body { padding: 16px 18px; }
+    .outfit-name { font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 3px; }
+    .outfit-occ { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; }
+    .outfit-palette { display: flex; gap: 6px; margin-bottom: 14px; }
+    .outfit-dot { width: 16px; height: 16px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.15); flex-shrink: 0; }
+    .bp-row { display: flex; gap: 8px; font-size: 13px; padding: 5px 0; border-bottom: 1px solid var(--border); line-height: 1.4; }
+    .bp-row:last-child { border-bottom: none; }
+    .bp-label { color: var(--muted); width: 68px; flex-shrink: 0; font-size: 12px; padding-top: 1px; }
+    .bp-val { color: var(--white); }
+    .fit-warn { font-size: 11px; color: #d4a060; margin-top: 10px; padding: 7px 10px; background: rgba(244,161,66,0.08); border-left: 2px solid #f4a142; border-radius: 4px; line-height: 1.5; }
+
   </style>
 </head>
 <body>
@@ -408,6 +433,7 @@
   <a href="#fitness" data-section="fitness"><span class="icon">💪</span> Fitness</a>
   <a href="#colour" data-section="colour"><span class="icon">🎨</span> Colour Palette</a>
   <a href="#hair" data-section="hair"><span class="icon">✂️</span> Hair & Grooming</a>
+  <a href="#wardrobe" data-section="wardrobe"><span class="icon">👔</span> Wardrobe</a>
   <a href="#checkin" data-section="checkin"><span class="icon">📋</span> Weekly Check-In</a>
   <a href="#shopping" data-section="shopping"><span class="icon">🛍️</span> Trondheim Shopping</a>
 </nav>
@@ -465,26 +491,29 @@
     <p class="section-subtitle">True Winter · Redness-prone · Staged introduction — one product at a time</p>
 
     <div class="card">
-      <h3>Your Daily Routine</h3>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-        <div>
-          <div style="font-size:12px;font-weight:700;color:#f4a142;text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;">☀️ AM</div>
-          <div class="action-item"><div class="dot" style="background:#f4a142"></div><span class="action-text">Lukewarm water rinse</span></div>
-          <div class="action-item"><div class="dot" style="background:#f4a142"></div><span class="action-text">Vitamin C serum — wait 60 sec</span></div>
-          <div class="action-item"><div class="dot" style="background:#f4a142"></div><span class="action-text">Niacinamide serum</span></div>
-          <div class="action-item"><div class="dot" style="background:#f4a142"></div><span class="action-text">Eye cream — pat gently (ring finger)</span></div>
-          <div class="action-item"><div class="dot" style="background:#f4a142"></div><span class="action-text">Moisturiser</span></div>
-          <div class="action-item"><div class="dot" style="background:#f4a142"></div><strong class="action-text">SPF 50 ← NEVER SKIP</strong></div>
-        </div>
-        <div>
-          <div style="font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px;">🌙 PM</div>
-          <div class="action-item"><div class="dot" style="background:var(--accent)"></div><span class="action-text">Gentle cleanser (or BHA 2–3× per week in its place)</span></div>
-          <div class="action-item"><div class="dot" style="background:var(--accent)"></div><span class="action-text">Peptide serum (non-Retinol nights) or Retinol (2× per week — add Month 2)</span></div>
-          <div class="action-item"><div class="dot" style="background:var(--accent)"></div><span class="action-text">Eye cream — pat gently (ring finger)</span></div>
-          <div class="action-item"><div class="dot" style="background:var(--accent)"></div><span class="action-text">Heavy moisturiser</span></div>
-        </div>
-      </div>
-      <div class="note warning" style="margin-top:16px;">⚠️ Never BHA and Retinol on the same night. Alternate them. · Vitamin C AM only · Retinol PM only · Eye cream always pat, never rub</div>
+      <h3>☀️ AM Routine — Every Day (same)</h3>
+      <div class="action-item"><div class="dot" style="background:#f4a142"></div><span class="action-text">Lukewarm water rinse</span></div>
+      <div class="action-item"><div class="dot" style="background:#f4a142"></div><span class="action-text">Vitamin C serum — wait 60 sec</span></div>
+      <div class="action-item"><div class="dot" style="background:#f4a142"></div><span class="action-text">Niacinamide serum</span></div>
+      <div class="action-item"><div class="dot" style="background:#f4a142"></div><span class="action-text">Eye cream — pat gently (ring finger)</span></div>
+      <div class="action-item"><div class="dot" style="background:#f4a142"></div><span class="action-text">Moisturiser</span></div>
+      <div class="action-item"><div class="dot" style="background:#f4a142"></div><strong class="action-text">SPF 50 ← NEVER SKIP</strong></div>
+    </div>
+
+    <div class="card">
+      <h3>🌙 PM Routine — Weekly Rotation</h3>
+      <table>
+        <tr><th>Dag</th><th>Aktiv</th><th>Steg</th></tr>
+        <tr><td><strong>Mandag</strong></td><td style="color:#c47cff;font-weight:600;">Retinoid</td><td style="color:var(--muted);font-size:12px;">Oljeskyll → Rens → Retinoid → Fuktighetskrem</td></tr>
+        <tr><td><strong>Tirsdag</strong></td><td style="color:#7acc9a;font-weight:600;">Peptider</td><td style="color:var(--muted);font-size:12px;">Oljeskyll → Rens → Peptidserum → Fuktighetskrem</td></tr>
+        <tr><td><strong>Onsdag</strong></td><td style="color:#f4a142;font-weight:600;">BHA</td><td style="color:var(--muted);font-size:12px;">Oljeskyll → Rens → BHA → Peptidserum → Fuktighetskrem</td></tr>
+        <tr><td><strong>Torsdag</strong></td><td style="color:#c47cff;font-weight:600;">Retinoid</td><td style="color:var(--muted);font-size:12px;">Oljeskyll → Rens → Retinoid → Fuktighetskrem</td></tr>
+        <tr><td><strong>Fredag</strong></td><td style="color:#7acc9a;font-weight:600;">Peptider</td><td style="color:var(--muted);font-size:12px;">Oljeskyll → Rens → Peptidserum → Fuktighetskrem</td></tr>
+        <tr><td><strong>Lørdag</strong></td><td style="color:#f4a142;font-weight:600;">BHA</td><td style="color:var(--muted);font-size:12px;">Oljeskyll → Rens → BHA → Peptidserum → Fuktighetskrem</td></tr>
+        <tr><td><strong>Søndag</strong></td><td style="color:var(--muted);font-weight:600;">Hvile</td><td style="color:var(--muted);font-size:12px;">Oljeskyll → Rens → Fuktighetskrem</td></tr>
+      </table>
+      <div class="note warning" style="margin-top:14px;">⚠️ Retinoid og BHA aldri samme kveld · Vitamin C kun AM · Eye cream alltid pat, aldri gni</div>
+      <div class="note" style="margin-top:8px;">💡 <strong>BHA, peptider og retinoid vaskes ikke av.</strong> Alle tre er leave-on — påfør på ren hud, legg fuktighetskrem oppå, og la dem virke gjennom natten.</div>
     </div>
 
     <div class="card">
@@ -775,6 +804,251 @@ Product: Light matte paste or nothing — avoid shine products</div>
     </div>
   </section>
 
+  <!-- WARDROBE -->
+  <section id="wardrobe">
+    <h2>Wardrobe</h2>
+    <p class="section-subtitle">True Winter · Avslappet men bevisst · Retro sneakers · Blå innfatning</p>
+
+    <div class="wardrobe-tabs">
+      <div class="wardrobe-tab active" data-wcat="wjobb">💼 Jobb</div>
+      <div class="wardrobe-tab" data-wcat="wsmart">🌆 Smart-Casual</div>
+      <div class="wardrobe-tab" data-wcat="wfritid">☀️ Fritid</div>
+      <div class="wardrobe-tab" data-wcat="wtrening">💪 Trening</div>
+    </div>
+
+    <!-- JOBB -->
+    <div id="wjobb" class="wardrobe-cat active">
+      <div class="outfit-grid">
+
+        <div class="outfit-card">
+          <img class="outfit-img" src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=400&h=500&q=80" alt="Business Casual" onerror="this.style.background='#1e2530'">
+          <div class="outfit-body">
+            <div class="outfit-name">Business Casual</div>
+            <div class="outfit-occ">Jobb · møter · kontordag</div>
+            <div class="outfit-palette">
+              <div class="outfit-dot" style="background:#f0f4f8;border-color:#555" title="Hvit"></div>
+              <div class="outfit-dot" style="background:#36454f" title="Charcoal"></div>
+              <div class="outfit-dot" style="background:#191970" title="Navy"></div>
+            </div>
+            <div class="bp-row"><span class="bp-label">Overdel</span><span class="bp-val">Hvit crisp Oxford-skjorte</span></div>
+            <div class="bp-row"><span class="bp-label">Lag</span><span class="bp-val">Ustrukturert charcoal blazer</span></div>
+            <div class="bp-row"><span class="bp-label">Bukse</span><span class="bp-val">Navy slim chinos</span></div>
+            <div class="bp-row"><span class="bp-label">Sko</span><span class="bp-val">Hvite Nike Air / Onitsuka Tiger</span></div>
+            <div class="bp-row"><span class="bp-label">Detaljer</span><span class="bp-val">Blå innfatning · sølv-klokke</span></div>
+            <div class="fit-warn">⚠️ Blazerskuldre treffer acromialben presist — ikke dyttet ned</div>
+          </div>
+        </div>
+
+        <div class="outfit-card">
+          <img class="outfit-img" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&h=500&q=80" alt="Turtleneck Authority" onerror="this.style.background='#1e2530'">
+          <div class="outfit-body">
+            <div class="outfit-name">Turtleneck Authority</div>
+            <div class="outfit-occ">Jobb · presentasjon · formelt</div>
+            <div class="outfit-palette">
+              <div class="outfit-dot" style="background:#36454f" title="Charcoal"></div>
+              <div class="outfit-dot" style="background:#191970" title="Navy"></div>
+              <div class="outfit-dot" style="background:#2d3748" title="Mørk grå"></div>
+            </div>
+            <div class="bp-row"><span class="bp-label">Overdel</span><span class="bp-val">Charcoal merino turtleneck</span></div>
+            <div class="bp-row"><span class="bp-label">Lag</span><span class="bp-val">Navy ustrukturert blazer</span></div>
+            <div class="bp-row"><span class="bp-label">Bukse</span><span class="bp-val">Mørk grå ullbukse</span></div>
+            <div class="bp-row"><span class="bp-label">Sko</span><span class="bp-val">Hvite clean sneakers</span></div>
+            <div class="bp-row"><span class="bp-label">Detaljer</span><span class="bp-val">Blå innfatning · ingen caps</span></div>
+            <div class="fit-warn">⚠️ Blazer skal ikke spenne i midjen — strukturert men ikke stramt</div>
+          </div>
+        </div>
+
+        <div class="outfit-card">
+          <img class="outfit-img" src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=400&h=500&q=80" alt="Smart Polo" onerror="this.style.background='#1e2530'">
+          <div class="outfit-body">
+            <div class="outfit-name">Smart Polo</div>
+            <div class="outfit-occ">Jobb · uformell kontordag</div>
+            <div class="outfit-palette">
+              <div class="outfit-dot" style="background:#191970" title="Navy"></div>
+              <div class="outfit-dot" style="background:#36454f" title="Charcoal"></div>
+              <div class="outfit-dot" style="background:#f0f4f8;border-color:#555" title="Hvit (sko)"></div>
+            </div>
+            <div class="bp-row"><span class="bp-label">Overdel</span><span class="bp-val">Navy merino polo</span></div>
+            <div class="bp-row"><span class="bp-label">Bukse</span><span class="bp-val">Charcoal slim chinos</span></div>
+            <div class="bp-row"><span class="bp-label">Sko</span><span class="bp-val">Adidas Gazelle hvit/navy</span></div>
+            <div class="bp-row"><span class="bp-label">Detaljer</span><span class="bp-val">Blå innfatning · caps valgfritt</span></div>
+            <div class="fit-warn">⚠️ Poloskuldersøm skal treffe skuldertoppen — ikke henge ut</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SMART-CASUAL -->
+    <div id="wsmart" class="wardrobe-cat">
+      <div class="outfit-grid">
+
+        <div class="outfit-card">
+          <img class="outfit-img" src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=400&h=500&q=80" alt="Kveldsmiddag" onerror="this.style.background='#1e2530'">
+          <div class="outfit-body">
+            <div class="outfit-name">Kveldsmiddag</div>
+            <div class="outfit-occ">Smart-casual · restaurant · ute</div>
+            <div class="outfit-palette">
+              <div class="outfit-dot" style="background:#800000" title="Burgundy"></div>
+              <div class="outfit-dot" style="background:#191970" title="Navy"></div>
+              <div class="outfit-dot" style="background:#111111" title="Svart"></div>
+            </div>
+            <div class="bp-row"><span class="bp-label">Overdel</span><span class="bp-val">Burgunder mock-neck</span></div>
+            <div class="bp-row"><span class="bp-label">Lag</span><span class="bp-val">Navy ustrukturert blazer</span></div>
+            <div class="bp-row"><span class="bp-label">Bukse</span><span class="bp-val">Svarte slim-fit bukser</span></div>
+            <div class="bp-row"><span class="bp-label">Sko</span><span class="bp-val">Adidas Gazelle navy/hvit</span></div>
+            <div class="bp-row"><span class="bp-label">Detaljer</span><span class="bp-val">Blå innfatning · ingen caps</span></div>
+            <div class="fit-warn">⚠️ Burgunder + navy = True Winter-kombinasjon — unngå brun eller kamel her</div>
+          </div>
+        </div>
+
+        <div class="outfit-card">
+          <img class="outfit-img" src="https://images.unsplash.com/photo-1516826957135-700dedea698c?auto=format&fit=crop&w=400&h=500&q=80" alt="Weekend Sharp" onerror="this.style.background='#1e2530'">
+          <div class="outfit-body">
+            <div class="outfit-name">Weekend Sharp</div>
+            <div class="outfit-occ">Smart-casual · ute · helg</div>
+            <div class="outfit-palette">
+              <div class="outfit-dot" style="background:#f0f4f8;border-color:#555" title="Hvit"></div>
+              <div class="outfit-dot" style="background:#006400" title="Forest Green"></div>
+              <div class="outfit-dot" style="background:#1a237e" title="Dark Indigo"></div>
+            </div>
+            <div class="bp-row"><span class="bp-label">Overdel</span><span class="bp-val">Hvit crisp tee</span></div>
+            <div class="bp-row"><span class="bp-label">Lag</span><span class="bp-val">Forest green overshirt (åpen)</span></div>
+            <div class="bp-row"><span class="bp-label">Bukse</span><span class="bp-val">Mørk indigo selvedge denim</span></div>
+            <div class="bp-row"><span class="bp-label">Sko</span><span class="bp-val">Onitsuka Tiger hvit/grønn</span></div>
+            <div class="bp-row"><span class="bp-label">Detaljer</span><span class="bp-val">Charcoal sixpence · blå innfatning</span></div>
+            <div class="fit-warn">⚠️ Denim skal sitte jevnt i setet — ingen bunning ved kneet</div>
+          </div>
+        </div>
+
+        <div class="outfit-card">
+          <img class="outfit-img" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&h=500&q=80" alt="Networking" onerror="this.style.background='#1e2530'">
+          <div class="outfit-body">
+            <div class="outfit-name">Networking</div>
+            <div class="outfit-occ">Smart-casual · arrangement · møter</div>
+            <div class="outfit-palette">
+              <div class="outfit-dot" style="background:#a5c8d0" title="Icy Blue"></div>
+              <div class="outfit-dot" style="background:#36454f" title="Charcoal"></div>
+              <div class="outfit-dot" style="background:#191970" title="Navy"></div>
+            </div>
+            <div class="bp-row"><span class="bp-label">Overdel</span><span class="bp-val">Icy blue turtleneck</span></div>
+            <div class="bp-row"><span class="bp-label">Lag</span><span class="bp-val">Charcoal ustrukturert blazer</span></div>
+            <div class="bp-row"><span class="bp-label">Bukse</span><span class="bp-val">Navy slim chinos</span></div>
+            <div class="bp-row"><span class="bp-label">Sko</span><span class="bp-val">Hvite Nike Air</span></div>
+            <div class="bp-row"><span class="bp-label">Detaljer</span><span class="bp-val">Charcoal sixpence · blå innfatning</span></div>
+            <div class="fit-warn">⚠️ Icy blue nær ansiktet fremhever grey-blue øyne — ikke bytt med varm blå</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FRITID -->
+    <div id="wfritid" class="wardrobe-cat">
+      <div class="outfit-grid">
+
+        <div class="outfit-card">
+          <img class="outfit-img" src="https://images.unsplash.com/photo-1571945153237-4929e783af4a?auto=format&fit=crop&w=400&h=500&q=80" alt="Weekend Monokrom" onerror="this.style.background='#1e2530'">
+          <div class="outfit-body">
+            <div class="outfit-name">Weekend Monokrom</div>
+            <div class="outfit-occ">Fritid · helg · ærend</div>
+            <div class="outfit-palette">
+              <div class="outfit-dot" style="background:#36454f" title="Charcoal"></div>
+              <div class="outfit-dot" style="background:#191970" title="Navy"></div>
+              <div class="outfit-dot" style="background:#111111" title="Svart"></div>
+            </div>
+            <div class="bp-row"><span class="bp-label">Overdel</span><span class="bp-val">Charcoal henley</span></div>
+            <div class="bp-row"><span class="bp-label">Lag</span><span class="bp-val">Navy quiltet overshirt</span></div>
+            <div class="bp-row"><span class="bp-label">Bukse</span><span class="bp-val">Svarte slim jeans</span></div>
+            <div class="bp-row"><span class="bp-label">Sko</span><span class="bp-val">Nike Air Max hvit</span></div>
+            <div class="bp-row"><span class="bp-label">Detaljer</span><span class="bp-val">Navy caps · blå innfatning</span></div>
+            <div class="fit-warn">⚠️ Monokromt fungerer kun med True Winter-farger — ikke mix inn brunt eller beige</div>
+          </div>
+        </div>
+
+        <div class="outfit-card">
+          <img class="outfit-img" src="https://images.unsplash.com/photo-1548142813-c348350df52b?auto=format&fit=crop&w=400&h=500&q=80" alt="Casual Sharp" onerror="this.style.background='#1e2530'">
+          <div class="outfit-body">
+            <div class="outfit-name">Casual Sharp</div>
+            <div class="outfit-occ">Fritid · café · bytur</div>
+            <div class="outfit-palette">
+              <div class="outfit-dot" style="background:#f0f4f8;border-color:#555" title="Hvit"></div>
+              <div class="outfit-dot" style="background:#36454f" title="Charcoal"></div>
+            </div>
+            <div class="bp-row"><span class="bp-label">Overdel</span><span class="bp-val">Hvit clean tee (godt klipp)</span></div>
+            <div class="bp-row"><span class="bp-label">Bukse</span><span class="bp-val">Mørk charcoal slim jeans</span></div>
+            <div class="bp-row"><span class="bp-label">Sko</span><span class="bp-val">Adidas Gazelle hvit</span></div>
+            <div class="bp-row"><span class="bp-label">Detaljer</span><span class="bp-val">Sixpence · blå innfatning</span></div>
+            <div class="fit-warn">⚠️ Tee-skjorte skal ikke henge — skulder og bryst skal følge kroppen</div>
+          </div>
+        </div>
+
+        <div class="outfit-card">
+          <img class="outfit-img" src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=400&h=500&q=80" alt="City Café" onerror="this.style.background='#1e2530'">
+          <div class="outfit-body">
+            <div class="outfit-name">City Café</div>
+            <div class="outfit-occ">Fritid · reise · shopping</div>
+            <div class="outfit-palette">
+              <div class="outfit-dot" style="background:#191970" title="Navy"></div>
+              <div class="outfit-dot" style="background:#1a237e" title="Dark Indigo"></div>
+              <div class="outfit-dot" style="background:#f0f4f8;border-color:#555" title="Hvit/rød (sko)"></div>
+            </div>
+            <div class="bp-row"><span class="bp-label">Overdel</span><span class="bp-val">Navy zip hoodie (merino/bomull)</span></div>
+            <div class="bp-row"><span class="bp-label">Bukse</span><span class="bp-val">Mørk indigo denim</span></div>
+            <div class="bp-row"><span class="bp-label">Sko</span><span class="bp-val">Onitsuka Tiger hvit/rød</span></div>
+            <div class="bp-row"><span class="bp-label">Detaljer</span><span class="bp-val">Blå innfatning · ingen caps</span></div>
+            <div class="fit-warn">⚠️ Rød aksent på sko er ok — men ikke legg til mer rød/burgunder i resten</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TRENING -->
+    <div id="wtrening" class="wardrobe-cat">
+      <div class="outfit-grid">
+
+        <div class="outfit-card">
+          <img class="outfit-img" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=400&h=500&q=80" alt="Gym" onerror="this.style.background='#1e2530'">
+          <div class="outfit-body">
+            <div class="outfit-name">Gym</div>
+            <div class="outfit-occ">Trening · treningssenter</div>
+            <div class="outfit-palette">
+              <div class="outfit-dot" style="background:#36454f" title="Charcoal"></div>
+              <div class="outfit-dot" style="background:#111111" title="Svart"></div>
+              <div class="outfit-dot" style="background:#f0f4f8;border-color:#555" title="Hvit"></div>
+            </div>
+            <div class="bp-row"><span class="bp-label">Topp</span><span class="bp-val">Charcoal performance tee</span></div>
+            <div class="bp-row"><span class="bp-label">Bukse</span><span class="bp-val">Svarte training shorts</span></div>
+            <div class="bp-row"><span class="bp-label">Sko</span><span class="bp-val">Nike Air (hvit)</span></div>
+            <div class="bp-row"><span class="bp-label">Detaljer</span><span class="bp-val">Minimalistisk — ingen logo-overload</span></div>
+            <div class="fit-warn">⚠️ Unngå oversized — løst men ikke poseaktig</div>
+          </div>
+        </div>
+
+        <div class="outfit-card">
+          <img class="outfit-img" src="https://images.unsplash.com/photo-1534258936925-c58bed479fcb?auto=format&fit=crop&w=400&h=500&q=80" alt="Outdoor" onerror="this.style.background='#1e2530'">
+          <div class="outfit-body">
+            <div class="outfit-name">Outdoor / Tur</div>
+            <div class="outfit-occ">Trening · løping · friluft</div>
+            <div class="outfit-palette">
+              <div class="outfit-dot" style="background:#191970" title="Navy"></div>
+              <div class="outfit-dot" style="background:#1a237e" title="Mørk navy"></div>
+              <div class="outfit-dot" style="background:#f0f4f8;border-color:#555" title="Hvit"></div>
+            </div>
+            <div class="bp-row"><span class="bp-label">Topp</span><span class="bp-val">Navy quarter-zip running top</span></div>
+            <div class="bp-row"><span class="bp-label">Bukse</span><span class="bp-val">Mørk navy løpebukse</span></div>
+            <div class="bp-row"><span class="bp-label">Sko</span><span class="bp-val">Hvite løpesko / Nike Air</span></div>
+            <div class="bp-row"><span class="bp-label">Detaljer</span><span class="bp-val">Navy caps</span></div>
+            <div class="fit-warn">⚠️ Monokrom navy utendørs ser mer intentional ut enn random fargemix</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
   <!-- WEEKLY CHECK-IN -->
   <section id="checkin">
     <h2>Weekly Check-In</h2>
@@ -953,6 +1227,17 @@ Product: Light matte paste or nothing — avoid shine products</div>
   }
   window.addEventListener('hashchange', syncNavActive);
   syncNavActive();
+
+  // ── WARDROBE TABS ──
+  document.querySelectorAll('.wardrobe-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const cat = tab.dataset.wcat;
+      document.querySelectorAll('.wardrobe-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.wardrobe-cat').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById(cat).classList.add('active');
+    });
+  });
 
   // ── WORKOUT TABS ──
   document.querySelectorAll('.day-tab').forEach(tab => {

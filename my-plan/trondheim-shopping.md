@@ -18,6 +18,8 @@ Beste valg for hudpleie i Trondheim. Finner det meste her.
 | Fuktighetskrem | CeraVe Moisturising Cream |
 | Retinol | The Ordinary Retinol 0.2% in Squalane |
 
+| Peptidserum | The Ordinary Buffet | ~kr 180 |
+
 > Kicks har stort sett hele The Ordinary-sortimentet. Spør i butikk om de ikke har det i hyllen — de kan bestille.
 
 ---
@@ -111,19 +113,20 @@ Enkle svarte sko eller hvite sneakers. Se etter rene, minimalistiske modeller.
 
 ## ✅ Handlerekkefølge (gjør dette først)
 
-**Uke 1 — Apotek / Kicks:**
-- [ ] SPF 50 (La Roche-Posay eller CeraVe)
+**Uke 1 — Apotek / Kicks (start her):**
+- [ ] SPF 50 (La Roche-Posay eller CeraVe AM SPF 50)
 - [ ] Niacinamide 10% (The Ordinary)
-- [ ] Fuktighetskrem (CeraVe)
+- [ ] Fuktighetskrem (CeraVe Moisturising Cream)
 
 **Uke 1–2 — Klær (Dressmann eller Jack & Jones):**
 - [ ] 1–2 navy poloer i bomull
 - [ ] En koksgrå t-skjorte i god passform
 
 **Måned 1 — Kicks (legg til):**
-- [ ] Vitamin C serum (The Ordinary)
-- [ ] BHA eksfoliant (The Ordinary eller Paula's Choice)
+- [ ] Vitamin C serum (The Ordinary) — AM
+- [ ] BHA eksfoliant (Paula's Choice 2%) — PM onsdag + lørdag
 
-**Måned 2:**
-- [ ] Retinol 0.2% (The Ordinary)
+**Måned 2 — Kicks (legg til):**
+- [ ] Peptidserum (The Ordinary Buffet) — PM tirsdag, fredag, lørdag
+- [ ] Retinol 0.2% (The Ordinary) — PM mandag + torsdag
 - [ ] Vurder merino-strikk fra Selected Homme eller Filippa K

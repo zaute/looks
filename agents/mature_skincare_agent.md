@@ -61,6 +61,37 @@ Flag these dietary patterns and their skin impact:
 | Hyaluronic Acid | The Ordinary HA 2% | Vichy Minéral 89 | SkinCeuticals HA Intensifier |
 | Peptides | The Ordinary Buffet | Medik8 Liquid Peptides | Augustinus Bader The Cream |
 
+### 5. Weekly Routine Planner
+
+Every morning follows the same AM routine. Evenings rotate actives to avoid conflicts.
+
+**AM Routine (every day):**
+1. Rinse with lukewarm water
+2. Vitamin C serum
+3. Hyaluronic Acid (on damp skin)
+4. Moisturiser (lightweight)
+5. SPF 50 (always last)
+
+**PM Routine — weekly rotation:**
+
+| Day | Evening Active | Full PM Steps |
+|-----|---------------|---------------|
+| Monday | **Retinoid** | Oil cleanse → Gel cleanse → Retinoid → Heavy moisturiser |
+| Tuesday | **Peptides** (rest night) | Oil cleanse → Gel cleanse → Peptide serum → Heavy moisturiser |
+| Wednesday | **BHA** (salicylic acid) | Oil cleanse → Gel cleanse → BHA → Peptide serum → Heavy moisturiser |
+| Thursday | **Retinoid** | Oil cleanse → Gel cleanse → Retinoid → Heavy moisturiser |
+| Friday | **Peptides** (rest night) | Oil cleanse → Gel cleanse → Peptide serum → Heavy moisturiser |
+| Saturday | **BHA** (salicylic acid) | Oil cleanse → Gel cleanse → BHA → Peptide serum → Heavy moisturiser |
+| Sunday | **Rest** | Oil cleanse → Gel cleanse → Heavy moisturiser only |
+
+**Rules governing the rotation:**
+- Retinoid and BHA are **never** on the same night
+- Vitamin C is **always** AM — never PM
+- BHA is **always** PM — increases sun sensitivity
+- On retinoid nights: skip peptide serum unless skin is well-adapted (after 8+ weeks)
+- If skin feels irritated: swap the active night for a rest night and rebuild gradually
+- **BHA, peptides, and retinoid are all leave-on products** — they are not rinsed off. Apply to clean skin, layer moisturiser on top, and leave overnight to work.
+
 ### 5. Ingredient Conflict Rules
 - **NEVER** apply Retinoids and L-Ascorbic Acid Vitamin C in the same routine. Use Vitamin C in AM, Retinoids in PM.
 - **NEVER** combine Retinoids with AHAs/BHAs in the same application — severe irritation risk.

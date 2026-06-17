@@ -94,9 +94,9 @@ Peptides signal skin to produce collagen. They complement retinol rather than du
 
 ---
 
-## Your Full Daily Routine (once all products introduced)
+## Your Full Weekly Routine (once all products introduced)
 
-**AM:**
+**AM — every day (same routine):**
 1. Lukewarm water rinse
 2. Vitamin C serum — wait 60 seconds
 3. Niacinamide serum (if using separately)
@@ -104,11 +104,19 @@ Peptides signal skin to produce collagen. They complement retinol rather than du
 5. Moisturiser
 6. SPF 50 ← **never skip**
 
-**PM:**
-1. Gentle cleanser (or BHA cleanser 2–3x/week in its place)
-2. Peptide serum (on non-Retinol nights) or Retinol (2x/week)
-3. Eye cream — pat gently
-4. Heavy moisturiser
+**PM — weekly rotation:**
+
+| Dag | Aktiv | PM-steg |
+|-----|-------|---------|
+| Mandag | **Retinoid** | Oljeskyll → Rens → Retinoid → Fuktighetskrem |
+| Tirsdag | **Peptider** (hvilekveld) | Oljeskyll → Rens → Peptidserum → Fuktighetskrem |
+| Onsdag | **BHA** (salicylsyre) | Oljeskyll → Rens → BHA → Peptidserum → Fuktighetskrem |
+| Torsdag | **Retinoid** | Oljeskyll → Rens → Retinoid → Fuktighetskrem |
+| Fredag | **Peptider** (hvilekveld) | Oljeskyll → Rens → Peptidserum → Fuktighetskrem |
+| Lørdag | **BHA** (salicylsyre) | Oljeskyll → Rens → BHA → Peptidserum → Fuktighetskrem |
+| Søndag | **Hvile** | Oljeskyll → Rens → Fuktighetskrem |
+
+> ⚠️ Retinoid og BHA aldri samme kveld. Vitamin C alltid kun AM.
 
 ---
 
