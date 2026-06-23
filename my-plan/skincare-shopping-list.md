@@ -75,6 +75,16 @@ The eye area needs its own product — thinner skin, more sensitive, shows age f
 
 ⚠️ **Always pat — never rub.** Use your ring finger (lightest pressure).
 
+### Eye Retinol — PM only, 2–3x per week
+For undereye wrinkles specifically. Use a separate eye-formulated retinol — never apply regular face retinol near the eye.
+| Tier | Product | Price | Why |
+|------|---------|-------|-----|
+| Budget | **Boots Ingredients Retinol Eye Cream** ⭐ | ~£8–10 | Eye-safe retinol strength, affordable, available in-store |
+| Mid | RoC Retinol Correxion Eye Cream | ~£15–20 | Encapsulated retinol, gentle delivery |
+| Premium | Estée Lauder Advanced Night Repair Eye | ~£55 | Peptides + retinol-boosting antioxidants |
+
+> ⭐ **Current recommendation:** Boots Ingredients Retinol Eye Cream (PM only). Use ring finger, pat gently. Takes 8–12 weeks for visible results.
+
 ### Peptide Serum — PM on non-Retinol nights
 Peptides signal skin to produce collagen. They complement retinol rather than duplicate it — use on alternating nights.
 | Tier | Product | Price | Why |
